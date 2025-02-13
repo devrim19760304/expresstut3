@@ -19,6 +19,34 @@
         document.getElementById("calculator-form").addEventListener("submit",(e)=> {
             e.preventDefault();
             console.log("stop there")
+            const number1=document.getElementById("number1").value;
+            const number2=document.getElementById("number2").value;
+            console.log(number1,"  ",number2);
+            fetch("http://localhost:3000/calculator",{
+                method:"post",
+                headers: {
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify({
+                    number1:number1,
+                    number2:number2
+                })
+            })
+            .then((response)=> {
+                if(!response.ok) {
+                    throw new Error("failed to fetch")
+                }
+                return response.json()
+
+            })
+            .then((data)=> {
+                console.log(data);
+            })
+            .catch((error)=> {
+                console.error("error",error)
+            })
+
+
         })
     </script>
 </body>
