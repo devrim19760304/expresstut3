@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <h1>CALCULATOR</h1>
+    <form id="calculator-form" action="http://localhost:3000/calculator" method="post">
+        <input type="number" id="number1" name="number1"><br>
+        <input type="number" id="number2" name="number2"><br><br>
+        <button id="send-data" type="submit">Submit</button>
+
+
+    </form>
+    <script>
+        document.getElementById("calculator-form").addEventListener("submit",(e)=> {
+            e.preventDefault();
+            console.log("stop there")
+        })
+    </script>
+</body>
+</html>
