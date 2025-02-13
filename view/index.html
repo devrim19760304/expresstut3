@@ -14,7 +14,8 @@
         <button id="send-data" type="submit">Submit</button>
 
 
-    </form>
+    </form><br>
+    <h4 id="result-field">RESULT : </h4>
     <script>
         document.getElementById("calculator-form").addEventListener("submit",(e)=> {
             e.preventDefault();
@@ -41,6 +42,7 @@
             })
             .then((data)=> {
                 console.log(data);
+                document.getElementById("result-field").innerText=`RESULT :${data.result} `
             })
             .catch((error)=> {
                 console.error("error",error)
